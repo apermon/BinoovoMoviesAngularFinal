@@ -1,0 +1,79 @@
+<div class="container-fluid mt-4">
+    <div class="row" *ngIf="movie | async as movie">
+        <div class="col-md-3">
+            <img [src]="movie.Poster" style="width: 100%" [alt]="movie.Title" title="{{movie.Title}}" class="imgStyle">
+        </div>
+
+        <div class="col-md-6">
+            <h1>{{movie.Title}}</h1>
+            <table class="table table-stripped table-hover">
+                <tbody>
+                    <tr>
+                        <td>Año:</td>
+                        <td>{{movie.Year}}</td>
+                    </tr>
+                    <tr>
+                        <td>Estreno:</td>
+                        <td>{{movie.Released}}</td>
+                    </tr>
+                    <tr>
+                        <td>Duración:</td>
+                        <td>{{movie.Runtime}}</td>
+                    </tr>
+                    <tr>
+                        <td>Categoría:</td>
+                        <td>{{movie.Genre}}</td>
+                    </tr>
+                    <tr>
+                        <td>Director:</td>
+                        <td>{{movie.Director}}</td>
+                    </tr>
+                    <tr>
+                        <td>Escritor:</td>
+                        <td>{{movie.Writer}}</td>
+                    </tr>
+                    <tr>
+                        <td>Actores:</td>
+                        <td>{{movie.Actors}}</td>
+                    </tr>
+                    <tr>
+                        <td>País:</td>
+                        <td>{{movie.Country}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button (click)="goBack()" class="btn btn-primary">Volver</button>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-body text-light">
+                    <h4 class="card-title text-center">Estadísticas</h4>
+                    <div class="card-text">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>Taquilla:</td>
+                                    <td>{{movie.BoxOffice}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Votos:</td>
+                                    <td>{{movie.imdbVotes}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Puntuación:</td>
+                                    <td>{{movie.imdbRating}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Metascore:</td>
+                                    <td>{{movie.Metascore}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
